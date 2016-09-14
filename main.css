@@ -98,7 +98,24 @@ footer li img {
 }
 
 .johning {
-  color: red;
-  font-family: Verdana;
-  font-size: 16px;
+
+  font-size: 18px;
+}
+
+.IC {
+  font-size:18px;
+
+}
+
+.cpu {
+  font-size: 18px;
+}
+
+.games {
+  font-size: 18px;
+
+}
+
+html body {
+    background-color: #c0c0c0;
 }
