@@ -62,8 +62,8 @@ section .row img {
 .btn.btn-primary {
   border-radius: 2px;
   border: 0px;
-  color: #fbd1d5;
-  text-shadow: none;
+  color: #003366;
+  text-shadow: 2px 2px #ff0000;
   background-color: #ffffff;
 }
 
