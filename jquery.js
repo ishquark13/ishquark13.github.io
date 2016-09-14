@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	$('dbug').typed({
+	$('.col-sm-8').typed({
         strings: ["First sentence.", "Second sentence."],
-        typeSpeed:5;
+        typeSpeed:1;
       });
 });
