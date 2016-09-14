@@ -31,7 +31,7 @@ header p {
 .jumbotron {
   display: flex;
   align-items: center;
-  background-image: url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/jumbotron.jpg');
+  background-image: url('http://i.huffpost.com/gen/2409604/images/o-BEST-SPACE-PHOTOS-2014-facebook.jpg');
   background-size: cover;
   color: #ffffff;
   height: 500px;
@@ -63,17 +63,17 @@ section .row img {
   border-radius: 2px;
   border: 0px;
   color: #003366;
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: none;
   background-color: #ffffff;
 }
 
 .btn.btn-primary:hover {
   color: #ffffff;
-  background-color: #fbd1d5;
+  background-color: #003366;
 }
 
 .btn-secondary {
-  background-color: #E8DFE0;
+  background-color: green;
   color: #ffffff;
   margin: 0 0 30px;
 }
