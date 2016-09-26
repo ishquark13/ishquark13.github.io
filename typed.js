@@ -1,20 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @ishquark13
- Watch 103
-  Star 3,044
-  Fork 592 mattboldt/typed.js
- Code  Issues 48  Pull requests 28  Projects 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathtyped.js/js/typed.js
-79742b3  17 days ago
-@mattboldt mattboldt year & logo
-8 contributors @mattboldt @chrisvanmook @crdunst @iimanii @bsodmike @f0rmat1k @ankitr @caseyWebb
-RawBlameHistory     
-439 lines (362 sloc)  11.8 KB
+
 // The MIT License (MIT)
 
 // Typed.js | Copyright (c) 2016 Matt Boldt | www.mattboldt.com
