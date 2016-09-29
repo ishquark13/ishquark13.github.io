@@ -153,6 +153,7 @@ html body {
 }
 
 .typed-cursor{
+      color: #00FFFF;
       opacity: 1;
       font-size:60px;
   font-weight: 100;
