@@ -14,17 +14,17 @@
 
 <style>
   :root{
-    --ink:#1E2419;
-    --ink-2:#262E20;
-    --paper:#F3EFE2;
-    --paper-2:#EAE4D2;
-    --moss:#4B5D3A;
-    --brick:#A8442F;
-    --brick-2:#8F3826;
-    --cream:#EDE8D8;
-    --cream-dim:#C8C4B2;
-    --line:rgba(237,232,216,0.16);
-    --line-dark:rgba(30,36,25,0.14);
+    --ink:#122320;
+    --ink-2:#1B2E28;
+    --paper:#FBF3E4;
+    --paper-2:#F7E9CC;
+    --moss:#1FA35C;
+    --brick:#F04E23;
+    --brick-2:#D63C15;
+    --cream:#F5F1E1;
+    --cream-dim:#BEDCCB;
+    --line:rgba(245,241,225,0.16);
+    --line-dark:rgba(18,35,32,0.14);
     --radius:2px;
   }
   *{box-sizing:border-box;}
@@ -145,7 +145,7 @@
     color:var(--cream);
   }
   .hero h1 em{
-    font-style:italic;color:#D8A98F;
+    font-style:italic;color:#FFB238;
   }
   .hero p.lede{
     margin-top:22px;
@@ -263,7 +263,7 @@
   /* ---------- Approach / logbook steps ---------- */
   .approach{background:var(--ink);color:var(--cream);}
   .approach .section-head p{color:var(--cream-dim);}
-  .approach .section-head .kicker{color:#D8A98F;}
+  .approach .section-head .kicker{color:#FFB238;}
   .log-list{
     display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
     background:var(--line);
@@ -274,7 +274,7 @@
   }
   .log-num{
     font-family:'IBM Plex Mono',monospace;
-    font-size:0.8rem;color:#D8A98F;letter-spacing:0.06em;
+    font-size:0.8rem;color:#FFB238;letter-spacing:0.06em;
     margin-bottom:18px;display:block;
   }
   .log-item h3{font-size:1.1rem;color:var(--cream);margin-bottom:10px;}
@@ -353,6 +353,22 @@
   }
   .about-text h2{font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:16px;}
   .about-text p{color:#4B4A3E;margin:0 0 14px;}
+  .podcast-callout{
+    margin-top:22px;padding:20px 22px;
+    background:var(--paper-2);
+    border-left:3px solid var(--moss);
+    border-radius:var(--radius);
+  }
+  .podcast-label{display:block;font-size:0.9rem;color:#3E3D33;margin-bottom:14px;}
+  .podcast-links{display:flex;gap:12px;flex-wrap:wrap;}
+  .podcast-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:9px 16px;
+    border-radius:var(--radius);
+    background:var(--ink);color:var(--cream);
+    text-decoration:none;font-size:0.86rem;font-weight:500;
+  }
+  .podcast-btn:hover{background:var(--ink-2);}
   @media (max-width:860px){.about{grid-template-columns:1fr;}.about-photo{max-width:280px;margin:0 auto;}}
 
   /* ---------- FAQ ---------- */
@@ -410,9 +426,9 @@
   <div class="wrap nav-row">
     <a class="brand" href="#top">
       <svg class="mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="20" cy="20" r="18" fill="none" stroke="#EDE8D8" stroke-width="1.4"/>
-        <path d="M20 2 A18 18 0 0 1 35.6 27 L20 20 Z" fill="#A8442F"/>
-        <path d="M35.6 27 A18 18 0 0 1 12 37.2 L20 20 Z" fill="#4B5D3A"/>
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#F5F1E1" stroke-width="1.4"/>
+        <path d="M20 2 A18 18 0 0 1 35.6 27 L20 20 Z" fill="#F04E23"/>
+        <path d="M35.6 27 A18 18 0 0 1 12 37.2 L20 20 Z" fill="#1FA35C"/>
       </svg>
       Ishmael Pelayo
     </a>
@@ -442,13 +458,13 @@
       </div>
       <div class="plate-wrap">
         <svg viewBox="0 0 260 260" width="100%" style="max-width:280px" aria-hidden="true">
-          <circle cx="130" cy="130" r="118" fill="none" stroke="#3A4230" stroke-width="1"/>
-          <path d="M130 130 L130 12 A118 118 0 0 1 232 174 Z" fill="#A8442F"/>
-          <path d="M130 130 L232 174 A118 118 0 0 1 60 235 Z" fill="#4B5D3A"/>
-          <path d="M130 130 L60 235 A118 118 0 0 1 130 12 Z" fill="#EDE8D8" fill-opacity="0.9"/>
-          <circle cx="130" cy="130" r="40" fill="#1E2419" stroke="#3A4230" stroke-width="1"/>
-          <text x="130" y="126" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#EDE8D8" letter-spacing="1">TRAIN</text>
-          <text x="130" y="140" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#EDE8D8" letter-spacing="1">EAT</text>
+          <circle cx="130" cy="130" r="118" fill="none" stroke="#24413A" stroke-width="1"/>
+          <path d="M130 130 L130 12 A118 118 0 0 1 232 174 Z" fill="#F04E23"/>
+          <path d="M130 130 L232 174 A118 118 0 0 1 60 235 Z" fill="#1FA35C"/>
+          <path d="M130 130 L60 235 A118 118 0 0 1 130 12 Z" fill="#F5F1E1" fill-opacity="0.9"/>
+          <circle cx="130" cy="130" r="40" fill="#122320" stroke="#24413A" stroke-width="1"/>
+          <text x="130" y="126" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#F5F1E1" letter-spacing="1">TRAIN</text>
+          <text x="130" y="140" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#F5F1E1" letter-spacing="1">EAT</text>
         </svg>
         <span class="plate-caption">Protein · Produce · Everything else</span>
       </div>
@@ -554,7 +570,7 @@
         <div class="plan featured">
           <span class="plan-tag">Most requested</span>
           <h3>Coached Monthly</h3>
-          <div class="price">$180<span>/mo</span></div>
+          <div class="price">$200<span>/mo*</span></div>
           <ul>
             <li>Custom training program</li>
             <li>Plate-based nutrition plan</li>
@@ -576,6 +592,7 @@
           <a href="#contact" class="btn btn-ghost" style="border-color:var(--line-dark);color:var(--ink);">Check availability</a>
         </div>
       </div>
+      <p style="margin-top:22px;font-size:0.85rem;color:#7B7A69;">*Results guaranteed on Coached Monthly — if you don't see results, I'll refund every penny.</p>
     </div>
   </section>
 
@@ -622,6 +639,19 @@
         <h2>I coach the plan that survives a bad week, not just a good one.</h2>
         <p>I'm Ishmael Pelayo — a personal trainer and nutrition coach focused on sustainable strength and eating habits for people with real schedules, not empty ones.</p>
         <p>My approach leans on a simple plate framework instead of rigid macros or meal plans, paired with training built around the equipment and time you actually have. The goal is always the same: a plan you can still run in six months.</p>
+        <div class="podcast-callout">
+          <span class="podcast-label">Also hosting: <strong>Trust The Calls</strong> — a weekly fitness &amp; nutrition podcast with Austin</span>
+          <div class="podcast-links">
+            <a href="https://open.spotify.com/show/0n8XFJHaNWRrOtvQChsfdj" class="podcast-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.59 14.42a.62.62 0 0 1-.86.21c-2.35-1.44-5.31-1.76-8.79-.96a.63.63 0 0 1-.28-1.22c3.81-.87 7.08-.5 9.72 1.11a.62.62 0 0 1 .21.86Zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.14-.56 11.23 1.33a.78.78 0 0 1 .26 1.07Zm.11-2.84C14.98 9.02 9.9 8.85 6.94 9.75a.93.93 0 1 1-.54-1.78c3.4-1.03 9.06-.83 12.63 1.29a.93.93 0 0 1-.94 1.6Z"/></svg>
+              Spotify
+            </a>
+            <a href="https://podcasts.apple.com/us/podcast/trust-the-calls/id1871918932" class="podcast-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 3.6a3.3 3.3 0 1 1 0 6.6 3.3 3.3 0 0 1 0-6.6Zm0 14.2a7.9 7.9 0 0 1-5.66-2.38c.07-1.9 3.8-2.94 5.66-2.94s5.59 1.04 5.66 2.94A7.9 7.9 0 0 1 12 19.8Z"/></svg>
+              Apple Podcasts
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -679,6 +709,8 @@
       <a href="#approach">Approach</a>
       <a href="#plans">Coaching</a>
       <a href="#faq">FAQ</a>
+      <a href="https://open.spotify.com/show/0n8XFJHaNWRrOtvQChsfdj" target="_blank" rel="noopener">Podcast: Spotify</a>
+      <a href="https://podcasts.apple.com/us/podcast/trust-the-calls/id1871918932" target="_blank" rel="noopener">Podcast: Apple</a>
       <a href="mailto:hello@thelsh.org">hello@thelsh.org</a>
     </div>
     <span class="mono" style="font-size:0.78rem;">&copy; 2026 Thelsh.org</span>
