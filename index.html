@@ -1,830 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Thelsh Landing Page</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishmael Pelayo — Strength &amp; Simple Food Coaching</title>
+<meta name="description" content="Personal training, nutrition, and lifestyle coaching with Ishmael Pelayo. Get the free 7-Day Reset guide.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2419;
+    --ink-2:#262E20;
+    --paper:#F3EFE2;
+    --paper-2:#EAE4D2;
+    --moss:#4B5D3A;
+    --brick:#A8442F;
+    --brick-2:#8F3826;
+    --cream:#EDE8D8;
+    --cream-dim:#C8C4B2;
+    --line:rgba(237,232,216,0.16);
+    --line-dark:rgba(30,36,25,0.14);
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  /* focus visibility */
+  a:focus-visible,button:focus-visible,input:focus-visible{
+    outline:2px solid var(--brick);
+    outline-offset:3px;
+  }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  /* ---------- Nav ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    height:72px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    color:var(--cream);
+    text-decoration:none;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .mark{width:30px;height:30px;flex:none;}
+  nav.primary-nav{display:flex;align-items:center;gap:30px;}
+  nav.primary-nav a{
+    color:var(--cream-dim);
+    text-decoration:none;
+    font-size:0.92rem;
+    letter-spacing:0.02em;
+  }
+  nav.primary-nav a:hover{color:var(--cream);}
+  .nav-cta{
+    background:var(--brick);
+    color:var(--cream);
+    padding:10px 18px;
+    border-radius:var(--radius);
+    font-size:0.88rem;
+    font-weight:500;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--brick-2);}
+  .nav-toggle{
+    display:none;background:none;border:none;color:var(--cream);
+    font-size:1.6rem;cursor:pointer;padding:4px 8px;
+  }
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  @media (max-width:860px){
+    nav.primary-nav{
+      position:absolute;top:72px;left:0;right:0;
+      background:var(--ink);
+      flex-direction:column;align-items:flex-start;
+      padding:8px 28px 24px;
+      gap:16px;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    nav.primary-nav.open{display:flex;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--cream);
+    padding:76px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.74rem;
+    color:var(--cream-dim);
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";width:26px;height:1px;background:var(--brick);display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem,4.4vw,3.4rem);
+    line-height:1.06;
+    color:var(--cream);
+  }
+  .hero h1 em{
+    font-style:italic;color:#D8A98F;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:1.08rem;
+    color:var(--cream-dim);
+    max-width:46ch;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex;flex-wrap:wrap;gap:14px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 24px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.95rem;
+    border:1px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--brick);color:var(--cream);}
+  .btn-primary:hover{background:var(--brick-2);}
+  .btn-ghost{border-color:var(--line);color:var(--cream);}
+  .btn-ghost:hover{border-color:var(--cream-dim);}
+
+  /* macro plate signature graphic */
+  .plate-wrap{
+    display:flex;justify-content:center;align-items:center;
+    position:relative;
+  }
+  .plate-caption{
+    position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;letter-spacing:0.08em;
+    color:var(--cream-dim);
+    text-transform:uppercase;
+    text-align:center;
+    white-space:nowrap;
+  }
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .plate-wrap{order:-1;max-width:220px;margin:0 auto 8px;}
+  }
+
+  /* ---------- Opt-in strip ---------- */
+  .optin{
+    background:var(--paper-2);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .optin-inner{
+    padding:34px 0;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:32px;
+    align-items:center;
+  }
+  .optin-text .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--moss);margin-bottom:8px;display:block;
+  }
+  .optin-text h2{font-size:1.4rem;}
+  .optin-text p{margin:8px 0 0;color:#4B4A3E;max-width:48ch;}
+  form.optin-form{
+    display:flex;gap:10px;flex-wrap:wrap;
+  }
+  form.optin-form input[type="email"]{
+    flex:1;min-width:200px;
+    padding:13px 16px;
+    border:1px solid var(--line-dark);
+    border-radius:var(--radius);
+    background:var(--paper);
+    font-family:'Work Sans',sans-serif;
+    font-size:0.95rem;
+    color:var(--ink);
+  }
+  form.optin-form input[type="email"]::placeholder{color:#8B8874;}
+  .form-note{
+    font-size:0.78rem;color:#7B7A69;margin-top:10px;
+  }
+  .form-success{
+    display:none;font-size:0.9rem;color:var(--moss);margin-top:10px;font-weight:500;
+  }
+
+  @media (max-width:760px){
+    .optin-inner{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Generic section ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:60ch;margin-bottom:52px;}
+  .section-head .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--brick);display:block;margin-bottom:12px;
+  }
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .section-head p{margin-top:16px;color:#4B4A3E;font-size:1.02rem;}
+
+  /* ---------- Who it's for ---------- */
+  .for-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .for-card{
+    background:var(--ink);color:var(--cream);
+    padding:30px 26px;border-radius:var(--radius);
+    border-left:3px solid var(--brick);
+  }
+  .for-card h3{font-size:1.05rem;color:var(--cream);margin-bottom:10px;}
+  .for-card p{color:var(--cream-dim);font-size:0.94rem;margin:0;}
+  @media (max-width:860px){.for-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Approach / logbook steps ---------- */
+  .approach{background:var(--ink);color:var(--cream);}
+  .approach .section-head p{color:var(--cream-dim);}
+  .approach .section-head .kicker{color:#D8A98F;}
+  .log-list{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .log-item{
+    background:var(--ink);padding:32px 26px;
+  }
+  .log-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;color:#D8A98F;letter-spacing:0.06em;
+    margin-bottom:18px;display:block;
+  }
+  .log-item h3{font-size:1.1rem;color:var(--cream);margin-bottom:10px;}
+  .log-item p{color:var(--cream-dim);font-size:0.92rem;margin:0;}
+  @media (max-width:860px){.log-list{grid-template-columns:1fr;}}
+
+  /* ---------- Plans ---------- */
+  .plans-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .plan{
+    background:var(--paper);
+    border:1px solid var(--line-dark);
+    border-radius:var(--radius);
+    padding:34px 28px;
+    display:flex;flex-direction:column;
+  }
+  .plan.featured{
+    border-color:var(--brick);
+    box-shadow:0 0 0 1px var(--brick);
+  }
+  .plan-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--moss);margin-bottom:14px;
+  }
+  .plan h3{font-size:1.3rem;margin-bottom:6px;}
+  .plan .price{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:1.6rem;margin:14px 0 18px;color:var(--ink);
+  }
+  .plan .price span{font-size:0.85rem;color:#7B7A69;font-family:'Work Sans',sans-serif;}
+  .plan ul{list-style:none;margin:0 0 26px;padding:0;flex:1;}
+  .plan li{
+    padding:9px 0;border-top:1px solid var(--line-dark);
+    font-size:0.92rem;color:#3E3D33;
+  }
+  .plan li:first-child{border-top:none;}
+  .plan .btn{justify-content:center;width:100%;}
+  @media (max-width:860px){.plans-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Results ---------- */
+  .results-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .result-card{
+    background:var(--paper-2);
+    border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .result-quote{font-size:0.98rem;color:#33321f;margin:0 0 20px;}
+  .result-who{
+    display:flex;align-items:center;gap:12px;
+  }
+  .avatar-initials{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--moss);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:0.8rem;flex:none;
+  }
+  .result-who .name{font-weight:600;font-size:0.9rem;}
+  .result-who .meta{font-size:0.78rem;color:#7B7A69;}
+  @media (max-width:860px){.results-grid{grid-template-columns:1fr;}}
+
+  /* ---------- About / coach ---------- */
+  .about{
+    display:grid;grid-template-columns:0.8fr 1.2fr;gap:52px;align-items:center;
+  }
+  .about-photo{
+    border-radius:var(--radius);overflow:hidden;
+    border:1px solid var(--line-dark);
+  }
+  .about-text .kicker{
+    font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--brick);display:block;margin-bottom:12px;
+  }
+  .about-text h2{font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:16px;}
+  .about-text p{color:#4B4A3E;margin:0 0 14px;}
+  @media (max-width:860px){.about{grid-template-columns:1fr;}.about-photo{max-width:280px;margin:0 auto;}}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;}
+  .faq-item{border-top:1px solid var(--line-dark);}
+  .faq-item:last-child{border-bottom:1px solid var(--line-dark);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;
+    padding:22px 0;font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;
+    color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  }
+  .faq-q .icon{font-family:'IBM Plex Mono',monospace;color:var(--brick);flex:none;}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height 0.25s ease;
+  }
+  .faq-a p{margin:0 0 22px;color:#4B4A3E;max-width:64ch;}
+  .faq-item.open .faq-a{max-height:240px;}
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    background:var(--ink);color:var(--cream);
+    text-align:center;
+  }
+  .final-cta h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--cream);max-width:20ch;margin:0 auto;}
+  .final-cta p{color:var(--cream-dim);margin:18px auto 0;max-width:50ch;}
+  .final-cta form.optin-form{
+    justify-content:center;max-width:520px;margin:34px auto 0;
+  }
+  .final-cta .form-note{color:var(--cream-dim);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);color:var(--cream-dim);
+    border-top:1px solid var(--line);
+    padding:40px 0;
+  }
+  .footer-row{
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+    font-size:0.85rem;
+  }
+  .footer-row .brand{font-size:0.95rem;}
+  .footer-links{display:flex;gap:22px;}
+  .footer-links a{text-decoration:none;color:var(--cream-dim);}
+  .footer-links a:hover{color:var(--cream);}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .faq-a{transition:none;}
+  }
+</style>
 </head>
+<body>
 
-<body class="index-page">
-
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Ishmael Pelayo</h1>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#EDE8D8" stroke-width="1.4"/>
+        <path d="M20 2 A18 18 0 0 1 35.6 27 L20 20 Z" fill="#A8442F"/>
+        <path d="M35.6 27 A18 18 0 0 1 12 37.2 L20 20 Z" fill="#4B5D3A"/>
+      </svg>
+      Ishmael Pelayo
     </a>
-
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://orcaadmin762.github.io/" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">&#9776;</button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#approach">Approach</a>
+      <a href="#plans">Coaching</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#start">Get the free guide</a>
     </nav>
+  </div>
+</header>
 
-  </header>
+<main id="top">
 
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Ishmael Pelayo</h2>
-        <p>I'm <span class="typed" data-typed-items=" a Software Engineer,  a ML Developer,  a Fitness Coach,  a Car Enthusiast, an Audiophile">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>UI/UX Designer &amp; Web Developer.</h2>
-            <p class="fst-italic py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York, USA</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            <p class="py-3">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-            </p>
-          </div>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Personal training &amp; nutrition coaching</span>
+        <h1>Strength and simple food, built to <em>outlast</em> your motivation.</h1>
+        <p class="lede">I help busy adults get stronger and eat better without a second job's worth of tracking, restriction, or willpower. One plan, adjusted to your real life — not a 6-week sprint you can't keep up.</p>
+        <div class="hero-actions">
+          <a href="#start" class="btn btn-primary">Get the free 7-Day Reset guide</a>
+          <a href="#plans" class="btn btn-ghost">See coaching plans</a>
         </div>
-
       </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Brandon Johnson</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-              <ul>
-                <li>Portland par 127,Orlando, FL</li>
-                <li>(123) 456-7891</li>
-                <li>alice.barkley@example.com</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Master of Fine Arts &amp; Graphic Design</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-              <h5>2010 - 2014</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior graphic design specialist</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Experion, New York, NY </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      <div class="plate-wrap">
+        <svg viewBox="0 0 260 260" width="100%" style="max-width:280px" aria-hidden="true">
+          <circle cx="130" cy="130" r="118" fill="none" stroke="#3A4230" stroke-width="1"/>
+          <path d="M130 130 L130 12 A118 118 0 0 1 232 174 Z" fill="#A8442F"/>
+          <path d="M130 130 L232 174 A118 118 0 0 1 60 235 Z" fill="#4B5D3A"/>
+          <path d="M130 130 L60 235 A118 118 0 0 1 130 12 Z" fill="#EDE8D8" fill-opacity="0.9"/>
+          <circle cx="130" cy="130" r="40" fill="#1E2419" stroke="#3A4230" stroke-width="1"/>
+          <text x="130" y="126" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#EDE8D8" letter-spacing="1">TRAIN</text>
+          <text x="130" y="140" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#EDE8D8" letter-spacing="1">EAT</text>
+        </svg>
+        <span class="plate-caption">Protein · Produce · Everything else</span>
       </div>
     </div>
+  </section>
 
-  </footer>
+  <div class="optin">
+    <div class="wrap optin-inner" id="start">
+      <div class="optin-text">
+        <span class="kicker">Start here — it's free</span>
+        <h2>The 7-Day Reset: a plate, a plan, and a way back to consistent.</h2>
+        <p>A short guide to resetting your training and food for one week — no meal plan to follow forever, just a clear starting point. Sent straight to your inbox.</p>
+      </div>
+      <div>
+        <form class="optin-form" id="optinForm" action="https://thelsh.us3.list-manage.com/subscribe/post?u=2a38964fcf65c4439ddf25760&amp;id=3eb32b0e32" method="post" name="mc-embedded-subscribe-form" target="mc-hidden-iframe" novalidate>
+          <label class="visually-hidden" for="email">Email address</label>
+          <input type="email" id="email" name="EMAIL" placeholder="you@email.com" required>
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_2a38964fcf65c4439ddf25760_3eb32b0e32" tabindex="-1" value="">
+          </div>
+          <button type="submit" class="btn btn-primary">Send it to me</button>
+        </form>
+        <p class="form-note">One email, no spam, unsubscribe anytime.</p>
+        <p class="form-success" id="formSuccess">Check your inbox — the guide is on its way.</p>
+      </div>
+    </div>
+  </div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <section id="who-for">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Is this you?</span>
+        <h2>Coaching built for people with a full calendar, not a fitness account to run.</h2>
+      </div>
+      <div class="for-grid">
+        <div class="for-card">
+          <h3>You've done the crash plans.</h3>
+          <p>You know how to lose weight fast. You want the version that's still true a year from now.</p>
+        </div>
+        <div class="for-card">
+          <h3>Training has to fit real life.</h3>
+          <p>Work, kids, travel — the plan needs to bend, not break, when the week gets messy.</p>
+        </div>
+        <div class="for-card">
+          <h3>You want a person, not an app.</h3>
+          <p>Someone who looks at your actual week and adjusts the plan, instead of a generic template.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <section class="approach" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">How coaching works</span>
+        <h2>Four sessions to a plan that runs itself.</h2>
+        <p>This is the actual sequence every client goes through — nothing skipped, nothing rushed.</p>
+      </div>
+      <div class="log-list">
+        <div class="log-item">
+          <span class="log-num">SESSION 01</span>
+          <h3>Assess</h3>
+          <p>Training history, current eating, schedule, and what's actually gotten in the way before.</p>
+        </div>
+        <div class="log-item">
+          <span class="log-num">SESSION 02</span>
+          <h3>Plan</h3>
+          <p>A training split and a simple plate structure built around your week — not a generic 12-week PDF.</p>
+        </div>
+        <div class="log-item">
+          <span class="log-num">SESSION 03</span>
+          <h3>Coach</h3>
+          <p>Weekly check-ins, form review, and adjustments as your schedule, energy, and results change.</p>
+        </div>
+        <div class="log-item">
+          <span class="log-num">SESSION 04</span>
+          <h3>Sustain</h3>
+          <p>The plan shifts from "coached" to "yours" — built to run with less input from me over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <section id="plans">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Coaching plans</span>
+        <h2>Pick a level of support, not a diet.</h2>
+      </div>
+      <div class="plans-grid">
+        <div class="plan">
+          <span class="plan-tag">Self-guided</span>
+          <h3>The Plan</h3>
+          <div class="price">$0<span> one-time setup</span></div>
+          <ul>
+            <li>7-Day Reset guide</li>
+            <li>Plate-based eating framework</li>
+            <li>Starter training template</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#start" class="btn btn-ghost" style="border-color:var(--line-dark);color:var(--ink);">Get started free</a>
+        </div>
+        <div class="plan featured">
+          <span class="plan-tag">Most requested</span>
+          <h3>Coached Monthly</h3>
+          <div class="price">$180<span>/mo</span></div>
+          <ul>
+            <li>Custom training program</li>
+            <li>Plate-based nutrition plan</li>
+            <li>Weekly check-ins</li>
+            <li>Direct messaging support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Apply for a spot</a>
+        </div>
+        <div class="plan">
+          <span class="plan-tag">Hands-on</span>
+          <h3>In-Person + Coaching</h3>
+          <div class="price">$340<span>/mo</span></div>
+          <ul>
+            <li>Everything in Coached Monthly</li>
+            <li>Weekly in-person sessions</li>
+            <li>Form and technique coaching</li>
+            <li>Priority scheduling</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost" style="border-color:var(--line-dark);color:var(--ink);">Check availability</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <section id="results">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Results</span>
+        <h2>What changes for the people who stick with it.</h2>
+        <p>Placeholder quotes below — swap in real client testimonials (with permission) once you have a few.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card">
+          <p class="result-quote">"The plate method finally made food make sense. I stopped overthinking every meal."</p>
+          <div class="result-who">
+            <span class="avatar-initials">M.R.</span>
+            <div><div class="name">M.R.</div><div class="meta">Client, 8 months</div></div>
+          </div>
+        </div>
+        <div class="result-card">
+          <p class="result-quote">"First plan I've kept for longer than a month — because it actually flexed around my travel schedule."</p>
+          <div class="result-who">
+            <span class="avatar-initials">J.T.</span>
+            <div><div class="name">J.T.</div><div class="meta">Client, 5 months</div></div>
+          </div>
+        </div>
+        <div class="result-card">
+          <p class="result-quote">"Weekly check-ins kept me honest without making me feel like I was being graded."</p>
+          <div class="result-who">
+            <span class="avatar-initials">A.K.</span>
+            <div><div class="name">A.K.</div><div class="meta">Client, 1 year</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-photo">
+        <img src="assets/img/my-profile-img.jpg" alt="Ishmael Pelayo, personal trainer and nutrition coach">
+      </div>
+      <div class="about-text">
+        <span class="kicker">Your coach</span>
+        <h2>I coach the plan that survives a bad week, not just a good one.</h2>
+        <p>I'm Ishmael Pelayo — a personal trainer and nutrition coach focused on sustainable strength and eating habits for people with real schedules, not empty ones.</p>
+        <p>My approach leans on a simple plate framework instead of rigid macros or meal plans, paired with training built around the equipment and time you actually have. The goal is always the same: a plan you can still run in six months.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Questions</span>
+        <h2>Before you reach out.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do I need gym experience to start? <span class="icon">+</span></button>
+          <div class="faq-a"><p>No. Programs are built around your current level, whether that's day one or year ten, and adjusted as you go.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Will I need to track calories or macros? <span class="icon">+</span></button>
+          <div class="faq-a"><p>Not by default. Most clients use the plate framework instead. Precise tracking is available if you want it, but it's not required.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is coaching in-person or online? <span class="icon">+</span></button>
+          <div class="faq-a"><p>Both. The Coached Monthly plan is fully online with weekly check-ins; the In-Person plan adds weekly sessions together.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What if my schedule changes week to week? <span class="icon">+</span></button>
+          <div class="faq-a"><p>That's what the weekly check-in is for — the plan adjusts with you instead of assuming a fixed routine.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" id="contact">
+    <div class="wrap">
+      <h2>Get the free guide, then decide if coaching is next.</h2>
+      <p>No pressure, no sales call required — just the 7-Day Reset guide in your inbox today.</p>
+      <form class="optin-form" id="optinForm2" action="https://thelsh.us3.list-manage.com/subscribe/post?u=2a38964fcf65c4439ddf25760&amp;id=3eb32b0e32" method="post" name="mc-embedded-subscribe-form" target="mc-hidden-iframe" novalidate>
+        <label class="visually-hidden" for="email2">Email address</label>
+        <input type="email" id="email2" name="EMAIL" placeholder="you@email.com" required>
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_2a38964fcf65c4439ddf25760_3eb32b0e32" tabindex="-1" value="">
+        </div>
+        <button type="submit" class="btn btn-primary">Send it to me</button>
+      </form>
+      <p class="form-success" id="formSuccess2" style="color:var(--cream-dim);"></p>
+      <p class="form-note">One email, no spam, unsubscribe anytime.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="brand">Ishmael Pelayo</span>
+    <div class="footer-links">
+      <a href="#approach">Approach</a>
+      <a href="#plans">Coaching</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:hello@thelsh.org">hello@thelsh.org</a>
+    </div>
+    <span class="mono" style="font-size:0.78rem;">&copy; 2026 Thelsh.org</span>
+  </div>
+</footer>
+
+<iframe name="mc-hidden-iframe" style="display:none;" title="Mailchimp response (hidden)"></iframe>
+
+<script>
+  // mobile nav toggle
+  var navToggle = document.getElementById('navToggle');
+  var primaryNav = document.getElementById('primaryNav');
+  navToggle.addEventListener('click', function(){
+    var open = primaryNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  primaryNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      primaryNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!wasOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // Email opt-in forms, wired to Mailchimp.
+  // Each form posts directly to Mailchimp's subscribe endpoint into a hidden
+  // iframe (Mailchimp doesn't support cross-origin fetch/XHR, so a real form
+  // POST is the standard, reliable integration method). Because the response
+  // loads in a hidden iframe we can't read Mailchimp's success/error response
+  // directly, so the confirmation message below is shown optimistically after
+  // submission. Mailchimp will still send its own double opt-in confirmation
+  // email if that's enabled on this audience.
+  function wireForm(formId, successId){
+    var form = document.getElementById(formId);
+    if(!form) return;
+    form.addEventListener('submit', function(){
+      setTimeout(function(){
+        form.style.display = 'none';
+        var successEl = document.getElementById(successId);
+        if(successEl){
+          successEl.textContent = successEl.textContent || "Check your inbox — the guide is on its way.";
+          successEl.style.display = 'block';
+        }
+      }, 400);
+    });
+  }
+  wireForm('optinForm','formSuccess');
+  wireForm('optinForm2','formSuccess2');
+</script>
 
 </body>
-
 </html>
